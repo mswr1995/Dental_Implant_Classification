@@ -1,0 +1,16 @@
+tensorflow
+numpy
+pandas
+matplotlib
+scikit-learn
+seaborn
+pillow
+opencv-python
+tqdm
+ipywidgets
+efficientnet
+albumentations
+pyyaml
+scikit-image
+jupyter
+tensorboard

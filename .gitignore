@@ -1,0 +1,59 @@
+# Virtual environment
+venv/
+env/
+.env/
+.venv/
+
+# Data directories
+data/data_collected/
+data/data_raw/
+data/data_processed/
+data/debug/
+debug/data/
+debug/results/
+
+# Keep .gitkeep files to maintain directory structure
+!data/data_collected/.gitkeep
+!data/data_raw/.gitkeep
+!data/data_processed/.gitkeep
+!data/debug/.gitkeep
+!debug/data/.gitkeep
+!debug/results/.gitkeep
+
+# Windows specific
+Thumbs.db
+desktop.ini
+*.lnk
+
+# VS Code
+.vscode/
+
+# Temporarily excluded
+results/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# TensorFlow/Keras
+*.h5
+*.hdf5
+*.keras

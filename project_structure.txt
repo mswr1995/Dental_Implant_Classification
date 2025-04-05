@@ -1,0 +1,103 @@
+dental-implant-classification/
+
+├── data/
+│   ├── data_collected/                  # Original YOLOv5 datasets
+│   │
+│   ├── data_raw/                        # Unified dataset
+│   │   ├── Bego/
+│   │   ├── Bicon/
+│   │   └── ...
+│   │   └── .gitkeep                     # Empty file to preserve folder in git
+│   │
+│   ├── data_processed/                  # Processed dataset
+│   │   ├── train/
+│   │   │   ├── Bego/
+│   │   │   ├── Bicon/
+│   │   │   └── ...
+│   │   ├── val/
+│   │   ├── test/
+│   │   └── .gitkeep                     # Empty file to preserve folder in git
+│   │
+│   ├── debug/                           # Debug output folder (contents gitignored)
+│   │   └── .gitkeep                     # Empty file to preserve folder in git
+│   │
+│   └── scripts/                         # Data processing scripts
+│       ├── organize_dataset.py          # Combines YOLOv5 datasets into unified format
+│       ├── data_process.py              # Main image processing script
+│       ├── data_analysis.R              # Statistical analysis of dataset
+│       └── data_visualization.ipynb     # Dataset visualization and exploration
+
+├── notebooks/                           # Experimentation and development
+│   ├── 1_exploratory_analysis.ipynb    # Initial data exploration
+│   ├── 2_efficientnetb3_training.ipynb # EfficientNetB3 development
+│   └── 3_custom_cnn_training.ipynb     # Custom CNN development
+
+├── src/                                # Production-ready code
+│   ├── models/
+│   │   ├── efficientnet_model.py       # Final EfficientNetB3 implementation
+│   │   └── custom_cnn.py              # Final Custom CNN implementation
+│   │
+│   ├── utils/
+│   │   ├── data_loader.py             # Data loading utilities
+│   │   ├── preprocessing.py           # Image preprocessing functions
+│   │   └── metrics.py                # Evaluation metrics
+│   │
+│   └── training/
+│       ├── train.py                   # Training pipeline
+│       └── evaluate.py               # Model evaluation
+
+├── results/
+│   ├── models/                         # Saved model weights
+│   ├── plots/                         # Generated figures
+│   └── metrics/                       # Performance metrics
+
+├── requirements.txt
+├── README.md
+└── .gitignore
+
+Project Workflow and Folder Usage Guide
+=====================================
+
+1. Data Preparation Phase (data/scripts/)
+   - Purpose: Initial data organization and analysis
+   - Run order:
+     1. organize_dataset.py: Combines multiple YOLOv5 datasets into unified format
+     2. data_process.py: Processes images for model training
+     3. data_analysis.R: Performs statistical analysis on dataset
+     4. data_visualization.ipynb: Visualizes dataset characteristics
+   - Run these FIRST before proceeding to model development
+
+2. Development Phase (notebooks/)
+   - Purpose: Experimentation and model development
+   - Contains Jupyter notebooks for:
+     - Data exploration
+     - Model prototyping
+     - Training experiments
+   - Use these during development to test approaches and validate ideas
+
+3. Production Phase (src/)
+   - Purpose: Clean, final implementation
+   - Contains:
+     - Final model architectures (models/)
+     - Utility functions (utils/)
+     - Training pipeline (training/)
+   - Use these for final training and deployment
+
+4. Results (results/)
+   - Purpose: Store outputs
+   - Contains:
+     - Trained model weights
+     - Performance plots
+     - Evaluation metrics
+
+5. Debug Information (data/debug/)
+   - Purpose: Stores intermediate processing steps for troubleshooting
+   - Contains:
+     - Sample images at various processing stages
+     - Automatically generated during processing with debug=True
+   - Contents are gitignored but folder structure is preserved
+
+Note: This structure separates experimental code (notebooks/) 
+from production code (src/) while keeping data preparation 
+scripts (data/scripts/) isolated. This ensures clean 
+organization and clear workflow progression.
