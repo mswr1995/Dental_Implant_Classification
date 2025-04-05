@@ -28,9 +28,6 @@ desktop.ini
 # VS Code
 .vscode/
 
-# Temporarily excluded
-results/
-
 # Python
 __pycache__/
 *.py[cod]
@@ -57,3 +54,6 @@ wheels/
 *.h5
 *.hdf5
 *.keras
+
+# Temporarily excluded
+results/
